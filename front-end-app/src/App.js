@@ -7,7 +7,16 @@ import {Search, EventList, Event, Map, EventDetails, Calendar} from  './componen
 class App extends Component {
   
   state = {
-    events: []
+    events: [],
+    apiKey: AIzaSyD6Y-jvO7HIRAAwTKIWiVcAZJf8ywR1MDs,
+    location: '',
+    serach
+  }
+
+  filteredEvents = (searchQuery, location) => {
+    this.setState({
+
+    })
   }
   
   componentDidMount() {
@@ -26,12 +35,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Search />
-        <EventList />
-        <Event />
-        <Map />
+        <Search filteredEvents={this.filteredEvents}/>
+        <EventList { ...this.state}/>
         <EventDetails { ...this.state}/>
         <Calendar />
+        <Map />
       </div>
     );
   }
