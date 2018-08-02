@@ -6,6 +6,7 @@ app.use(cors())
 
 const eventInfoAraay = [
     {
+        id: 0,
         title: 'Resume Building 101',
         description:`If this is the year you decided to find a new job or change industries altogether then we have a three-part workshop series that will help you conquer your next job search. 
             This 2hr workshop is catered to those looking to create an effective resume and cover letter. Be prepared to go through each section of a resume and how to format it so it's clear and concise. 
@@ -14,6 +15,7 @@ const eventInfoAraay = [
         time: `Wednesday August 8th, 2018, 6:00 - 8:00 PM`
     },
     {
+        id: 1,
         title: 'Search Engine Marketing Fundamentals',
         description:`Looking to boost your career potential by learning SEO, Google AdWords & Analytics? Experience what learning SEO/SEM & Analytics at BrainStation is all about.
             Our Part-time SEO/SEM & Analytics course is an effective medium for achieving your digital goals, as the program is hands-on, project-based and led by an active industry expert. If you’re curious to dive deeper into SEO/SEM & Analytics, this 90 minute workshop is an excellent precursor to the Part-time course course while offering a sense of the BrainStation learning experience. You'll have a chance to explore our learning model, custom portal and chat with Learning Advisors.
@@ -22,6 +24,7 @@ const eventInfoAraay = [
         time: `Monday August 13th, 2018, 6:00 - 7:30 PM`
     },
     {
+        id: 2,
         title: 'Intro to Data Analytics',
         description: `Looking to become confident with data? Experience what learning Data Analytics at BrainStation is all about. 
             Our Part-time Data Analytics course is an effective medium for achieving your digital goals, as the program is hands-on, project-based and led by an active industry expert. If you’re curious to dive deeper into Data Analytics, this 90 minute workshop is an excellent precursor to the Part-time course course while offering a sense of the BrainStation learning experience. You'll have a chance to explore our learning model, custom portal and chat with Learning Advisors.

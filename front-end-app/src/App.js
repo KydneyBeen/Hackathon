@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
 import axios from 'axios'
-import {Search, EventList, Event, Map, EventDetails, Calendar} from  './components'
+import {Search, EventList, Map, EventDetails, Calendar} from  './components'
 
 
 class App extends Component {
@@ -34,7 +34,9 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    
+    //param could be nearby, today, or tomorrow
+    if(this.state.search === 'Today' || 'Tomorrow')
+    axios.get(`http://localhost:8000/:`)
   }
   
   render() {
@@ -42,7 +44,7 @@ class App extends Component {
       <div className="App">
         <Search filteredEvents={this.filteredEvents}/>
         <EventList events={this.state.events}/>
-        <EventDetails events={this.state.events}/>
+        <EventDetails/>
         <Calendar />
         <Map />
       </div>
