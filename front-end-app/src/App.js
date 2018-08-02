@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Search, EventList, Event, Map, EventDetails, Calendar} from  './Components'
+import {Search, EventList, Event, Map, EventDetails, Calendar} from  './components'
 
 
 class App extends Component {
