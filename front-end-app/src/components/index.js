@@ -1,4 +1,4 @@
-import Search h from './Search'
+import Search from './Search'
 import EventList from './EventList'
 import Event from './Event'
 import EventDetails from './EventDetails'
