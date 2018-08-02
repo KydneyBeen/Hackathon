@@ -6,9 +6,7 @@ class Event extends Component {
         return (
             <tr>
                 <td>Title: {this.props.title}</td>
-                <td>Description: {this.props.title}</td>
-                <td>Date: {this.props.title}</td>
-                <td>Address: {this.props.title}</td>
+                <td>Description: {this.props.description}</td>
             </tr>
         )
     }
