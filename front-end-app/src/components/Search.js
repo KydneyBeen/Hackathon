@@ -3,7 +3,7 @@ import axios from "axios"
 
 class Search extends Component {
     state = {
-        query:null
+        query:"Today"
     }
 
     getAddress = (city) => {
@@ -17,6 +17,9 @@ class Search extends Component {
             <div className ="row">
                 <div className ="col">
                     <Input getQuery={this.getQuery}/>
+                </div>
+                <div>
+                    <span className="material-icons">search</span>
                 </div>
                 <div className ="col">
                     <Location getAddress={this.getAddress}/>
@@ -67,8 +70,26 @@ class Location extends Component {
     render() {
         
         return (
-            <div>
-            {this.state.city}, {this.state.province}
+            <div className = "form-group">
+                <select onChange={this.makeCity} className = "form-control" >
+                    <option value={this.state.city}> This City ({this.state.city}, {this.state.province})</option>
+                    <option value="Abbotsford">Abbotsford</option>
+                    <option value="Aldergrove">Aldergrove</option>
+                    <option value="Burnaby">Burnaby</option>
+                    <option value="Coquitlam">Coquitlam</option>
+                    <option value="Delta">Delta</option>
+                    <option value="Maple Ridge">Maple Ridge</option>
+                    <option value="Mission">Mission</option>
+                    <option value="North Vancouver">North Vancouver</option>
+                    <option value="Port Coquitlam">Port Coquitlam</option>
+                    <option value="Port Moody">Port Moody</option>
+                    <option value="Richmond">Richmond</option>
+                    <option value="Surrey">Surrey</option>
+                    <option value="Tsawwassen">Tsawwassen</option>
+                    <option value="Vancouver">Vancouver</option>
+                    <option value="West Vancouver">West Vancouver</option>
+                    <option value="White Rock">White Rock</option>
+                </select>
             </div>
         )
     }
