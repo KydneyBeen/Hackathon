@@ -3,14 +3,18 @@ import axios from "axios"
 
 class Search extends Component {
     state = {
+        city: "Vancouver",
         query:"Today"
     }
 
     getAddress = (city) => {
-        this.props.filteredEvents(this.state.query, city)
+        this.setState({city})
     }
     getQuery= (query) => {
         this.setState({query})
+    }
+    sendSearch = () => {
+        this.props.filteredEvents(this.state.query, this.state.city)
     }
     render() {
         return (
@@ -19,7 +23,7 @@ class Search extends Component {
                     <Input getQuery={this.getQuery}/>
                 </div>
                 <div>
-                    <span className="material-icons">search</span>
+                    <a href="#" className="material-icons" onClick={this.sendSearch}>search</a>
                 </div>
                 <div className ="col">
                     <Location getAddress={this.getAddress}/>
