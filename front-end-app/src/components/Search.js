@@ -9,11 +9,14 @@ class Search extends Component {
     getAddress = (city) => {
         this.props.filteredEvents(this.state.query, city)
     }
+    getQuery= (query) => {
+        this.setState({query})
+    }
     render() {
         return (
             <div className ="row">
                 <div className ="col">
-                    <Input />
+                    <Input getQuery={this.getQuery}/>
                 </div>
                 <div className ="col">
                     <Location getAddress={this.getAddress}/>
@@ -24,9 +27,20 @@ class Search extends Component {
 }
 
 class Input extends Component {
+
+    makeQuery = (e) => {
+        let selected = e.target.value;
+        this.props.getQuery(selected)
+    }
     render() {
         return (
-            null
+            <div className="form-group">
+                <select onChange={this.makeQuery} className="form-control">
+                    <option value="Today">Today</option>
+                    <option value="Tomorrow">Tomorrow</option>
+                    <option value="Week">7 Days</option>
+                </select>
+            </div>
         )
     }
 }
