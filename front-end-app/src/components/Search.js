@@ -51,7 +51,7 @@ class Location extends Component {
         })
     }
     render() {
-        this.props.getAddress(this.state.city)
+        
         return (
             <div>
             {this.state.city}, {this.state.province}
