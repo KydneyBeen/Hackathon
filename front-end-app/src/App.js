@@ -16,7 +16,7 @@ class App extends Component {
       const eventsArray = response.data
       this.setState({
         events: eventsArray
-        })
+        }, () => {console.log(this.state)})
       })
       .catch(error => {
           console.log(error)
