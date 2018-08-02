@@ -1,10 +1,23 @@
 import React, {Component } from 'react'
+import Event from './Event'
 
 class EventList extends Component {
     render() {
         console.log('EventList log', this.props)
-        return (
-             <h1>EventList Component</h1>
+        let eventJSX = this.props.events.map((element, i) =>{
+            return <Event 
+                title = {element.title}
+                address = {element.address}
+                time = {element.time}
+                key = {i}
+                />
+        })
+        return(  
+            <table>
+                <tbody>        
+                    {eventJSX}
+                </tbody>
+            </table>
         )
     }
 }
