@@ -6,9 +6,9 @@ class EventDetails extends Component {
         return (
             <div>
                 <p>Title: {this.props.title}</p>
-                <p>Description: {this.props.title}</p>
-                <p>Date: {this.props.title}</p>
-                <p>Address: {this.props.title}</p>
+                <p>Description: {this.props.description}</p>
+                <p>Address: {this.props.address}</p>
+                <p>Time: {this.props.time}</p>
             </div>
         )
     }
