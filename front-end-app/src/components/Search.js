@@ -6,9 +6,9 @@ class Search extends Component {
         query:null
     }
 
-    // getAddress = (city) => {
-    //     this.props.filteredEvents(this.state.query, city)
-    // }
+    getAddress = (city) => {
+        this.props.filteredEvents(this.state.query, city)
+    }
     render() {
         return (
             <div className ="row">
@@ -51,7 +51,7 @@ class Location extends Component {
         })
     }
     render() {
-        this.props.getAddress(this.state.city, this.state.province)
+        this.props.getAddress(this.state.city)
         return (
             <div>
             {this.state.city}, {this.state.province}
