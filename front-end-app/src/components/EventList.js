@@ -9,6 +9,7 @@ class EventList extends Component {
                 title = {element.title}
                 address = {element.address}
                 time = {element.time}
+                id = {element.id}
                 key = {i}
                 />
         })
