@@ -33,11 +33,11 @@ class App extends Component {
       })
   }
 
-  componentDidUpdate() {
-    //param could be nearby, today, or tomorrow
-    if(this.state.search === 'Today' || 'Tomorrow')
-    axios.get(`http://localhost:8000/:`)
-  }
+  // componentDidUpdate() {
+  //   param could be nearby, today, or tomorrow
+  //   if(this.state.search === 'Today' || 'Tomorrow')
+  //   axios.get(`http://localhost:8000/:`)
+  // }
   
   render() {
     return (
