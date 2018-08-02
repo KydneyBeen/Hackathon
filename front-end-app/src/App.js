@@ -41,8 +41,8 @@ class App extends Component {
     return (
       <div className="App">
         <Search filteredEvents={this.filteredEvents}/>
-        <EventList { ...this.state}/>
-        <EventDetails { ...this.state}/>
+        <EventList events={this.state.events}/>
+        <EventDetails events={this.state.events}/>
         <Calendar />
         <Map />
       </div>
