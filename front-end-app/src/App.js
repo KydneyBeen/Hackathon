@@ -8,14 +8,15 @@ class App extends Component {
   
   state = {
     events: [],
-    apiKey: AIzaSyD6Y-jvO7HIRAAwTKIWiVcAZJf8ywR1MDs,
+    apiKey: 'AIzaSyD6Y-jvO7HIRAAwTKIWiVcAZJf8ywR1MDs',
     location: '',
-    serach
+    search: ''
   }
 
   filteredEvents = (searchQuery, location) => {
     this.setState({
-
+      location: location,
+      search: searchQuery
     })
   }
   
@@ -30,6 +31,10 @@ class App extends Component {
       .catch(error => {
           console.log(error)
       })
+  }
+
+  componentDidUpdate() {
+    
   }
   
   render() {
