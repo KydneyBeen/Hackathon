@@ -2,6 +2,7 @@ import React, {Component } from 'react'
 
 class EventDetails extends Component {
     render() {
+        console.log('EventDetails log', this.props)
         return (
             <div>
                 <p>Title: {this.props.title}</p>
