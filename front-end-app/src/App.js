@@ -23,7 +23,7 @@ class App extends Component {
           console.log(response.data)
         this.setState({
           events: response.data
-        })
+        }, () => {console.localStorage(this.state.events)})
       })
     })
   }
