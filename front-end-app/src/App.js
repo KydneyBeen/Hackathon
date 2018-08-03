@@ -20,9 +20,10 @@ class App extends Component {
     },() => {
       axios.get(`http://localhost:8000/${this.state.location}/${this.state.search}`)
         .then(response => {
+          console.log(response.data)
         this.setState({
           events: response.data
-        })
+        }, () => {console.localStorage(this.state.events)})
       })
     })
   }
