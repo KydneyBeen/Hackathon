@@ -18,7 +18,7 @@ class EventDetails extends Component {
                  {!currEvent ? <p>Loading...</p> :
                 <div>
                     <div className='eventDetailsItems'>
-                        <img src={currEvent.images[0].url} alt=""/>
+                        {/* <img src={currEvent.images[0].url} alt=""/> */}
                         <h2>{currEvent.name}</h2>
                         <p>{currEvent.dates.start.localTime}</p>
                         <p>{currEvent._embedded.venues[0].name}</p>
