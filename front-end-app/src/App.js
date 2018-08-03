@@ -36,8 +36,9 @@ class App extends Component {
   }
   
   componentDidMount() {
-    axios.get('http://localhost:8000/')
+    axios.get(`http://localhost:8000/`)
     .then(response => {
+      console.log(response.data)
       const eventsArray = response.data
       this.setState({
         events: eventsArray

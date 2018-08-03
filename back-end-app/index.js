@@ -95,11 +95,8 @@ app.get('/:location/:searchQuery', (req, res) => {
         })
 })
 
-
-
-
 app.get('/', (req, res) => {
-    axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=9RWdFkyifD1SUSNK9qV0MYKWz5226k5G&c`)
+    axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=9RWdFkyifD1SUSNK9qV0MYKWz5226k5G&`)
     .then((response) => {
         res.send(response.data._embedded.events)
     })

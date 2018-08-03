@@ -5,7 +5,7 @@ class Event extends Component {
     render() {
         console.log('Event log', this.props)
         return (
-            <div className="col-lg-4 col-md-6 col-sm-12">
+            <div className="justify-content-center col-lg-4 col-sm-6 col-xs-12">
             <div className="card">
                 <img className="card-img-top" src={this.props.image} alt="Card image cap"/>
                 <div className="card-body">

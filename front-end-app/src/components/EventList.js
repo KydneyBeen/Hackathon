@@ -18,7 +18,7 @@ class EventList extends Component {
                 title = {element.name}
                 timeDate = {element.dates.start.localDate}
                 timeTime = {element.dates.start.localTime}
-                id = {i}
+                id = {element.id}
                 key = {element.id}
                 image = {element.images[0].url}
                 funcCurrEvent = {this.funcCurrEvent}
