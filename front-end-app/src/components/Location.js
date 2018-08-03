@@ -26,7 +26,7 @@ class Location extends Component {
                         province,
                     })
                 })
-                .then((res) => {
+                .then(() => {
                     let welcomeCity = city + ", " + province
                     this.props.getCity(welcomeCity)
                 })

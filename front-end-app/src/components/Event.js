@@ -9,7 +9,7 @@ class Event extends Component {
                 <div className="card-body">
                     <h5 className="card-title">{this.props.title}</h5>
                     <p className="card-text">{this.props.timeDate}-{this.props.timeTime} </p>
-                    <a className='btn btn-primary eventBtn' onClick={() => {this.props.funcCurrEvent(this.props.id)}}>Purchase Tickets</a>
+                    <a className='btn btn-primary eventBtn' onClick={() => {this.props.funcCurrEvent(this.props.id)}}>More Info</a>
                 </div>
             </div>
         )

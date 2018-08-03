@@ -28,7 +28,7 @@ class Search extends Component {
                     <a href='' className="material-icons" onClick={this.sendSearch}>search</a>
                 </div>
                 <div className ="col">
-                    <Location getAddress={this.getAddress}/>
+                    <Location getAddress={this.getAddress} getCity={this.props.getCity}/>
                 </div>
             </div>
         )
