@@ -18,7 +18,6 @@ class App extends Component {
       location: location,
       search: searchQuery
     },() => {
-      console.log(this.state.location, this.state.search)
       axios.get(`http://localhost:8000/${this.state.location}/${this.state.search}`)
         .then(response => {
         this.setState({

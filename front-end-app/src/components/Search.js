@@ -14,7 +14,8 @@ class Search extends Component {
     getQuery= (query) => {
         this.setState({query})
     }
-    sendSearch = () => {
+    sendSearch = (e) => {
+        e.preventDefault()
         this.props.filteredEvents(this.state.query, this.state.city)
     }
     render() {
@@ -24,7 +25,7 @@ class Search extends Component {
                     <Input getQuery={this.getQuery}/>
                 </div>
                 <div>
-                    <i className="material-icons searchSectionIcon" onClick={this.sendSearch}>search</i>
+                    <a href='' className="material-icons" onClick={this.sendSearch}>search</a>
                 </div>
                 <div className ="col">
                     <Location getAddress={this.getAddress}/>
