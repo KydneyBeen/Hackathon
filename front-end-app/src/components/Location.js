@@ -24,10 +24,6 @@ class Location extends Component {
                     province,
                 })
             })
-            axios.get('https://app.ticketmaster.com/discovery/v2/events.json?apikey=9RWdFkyifD1SUSNK9qV0MYKWz5226k5G&city=Vancouver&startDateTime=2018-08-03T12:00:00Z')
-            .then ((res) => {
-                console.log(res.data)
-            })
         })
     }
     render() {
