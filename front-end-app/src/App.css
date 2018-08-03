@@ -23,12 +23,19 @@
 }
 
 .searchSection{
-  width: 50vw;
+  background-color: #161324;
+  padding-top: 15px;
+  margin: 0;
+  width: 100vw;
+}
+
+.searchSectionIcon{
+  margin-top: 9px;
+  color: white;
 }
 
 .eventList {
   display: inline-block;
-  height: 95vh;
   width: 100vw;
   border: 1px solid
 }
@@ -49,13 +56,13 @@
 }
 
 .eventDetailsItems{
-  height: 48vh;
+  height: 40vh;
 }
 
 .map-iframe {
   display: block;
   width: 100%;
-  height: 403px;
+  height: 406px;
   margin-top: 15px;
 }
 
@@ -76,8 +83,9 @@
 
 .material-icons {
   text-align: center !important;
-    vertical-align: middle;
-    margin-right: 10px;
+  vertical-align: middle;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 @keyframes App-logo-spin {
