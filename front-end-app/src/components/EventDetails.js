@@ -12,24 +12,23 @@ class EventDetails extends Component {
        })
 
         return (
-            <div className='eventDetails'>
-                <h1>Event Details</h1>
-                 {!currEvent ? <p>Loading...</p> :
-                <div>
-                    <div className='eventDetailsItems'>
-                        {/* <img src={currEvent.images[0].url} alt=""/> */}
-                        <h2>{currEvent.name}</h2>
-                        <p>{currEvent.dates.start.localTime}</p>
-                        <p>{currEvent._embedded.venues[0].name}</p>
-                        <button><a href={currEvent.url}>Buy Now</a></button>
-
-
-                    </div>
-                    <Calendar currEvent={currEvent}/>
-                    <Map currEvent={currEvent}/>
+            <div className="eventWrapper">
+                <div className='eventDetails'>
+                    <h1>Event Details</h1>
+                    {!currEvent ? <p>Loading...</p> :
+                        <div>
+                            <div className='eventDetailsItems'>
+                                {/* <img src={currEvent.images[0].url} alt=""/> */}
+                                <h2>{currEvent.name}</h2>
+                                <p>{currEvent.dates.start.localTime}</p>
+                                <p>{currEvent._embedded.venues[0].name}</p>
+                                <button><a href={currEvent.url}>Buy Now</a></button>
+                            </div>
+                                <Calendar currEvent={currEvent}/>
+                                <Map currEvent={currEvent}/>
+                        </div>
+                    }
                 </div>
-                }
-                
             </div>
         )
     }
