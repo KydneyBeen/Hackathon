@@ -22,6 +22,47 @@
   font-size: large;
 }
 
+.eventList {
+  display: inline-block;
+  height: 94vh;
+  width: 100%;
+  border: 1px solid
+}
+
+.eventListTable {
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+  border: 1px solid
+}
+
+.eventDetails {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  text-align: left;
+  border: 1px solid
+}
+
+.map-iframe {
+  width: 100%;
+  margin-top: 15px;
+  height: 400px;
+
+}
+
+.btn {
+  text-align: center !important;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+
+.material-icons {
+  text-align: center !important;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

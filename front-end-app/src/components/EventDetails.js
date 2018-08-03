@@ -7,7 +7,7 @@ class EventDetails extends Component {
         // console.log('EventDetails log', this.props.currEvent)
        
         return (
-            <div>
+            <div className='eventDetails'>
                 {!this.props.currEvent ? <p> 'loading .... ' </p> : 
                 <div>
                     <div>

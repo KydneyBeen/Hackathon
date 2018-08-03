@@ -27,8 +27,8 @@ class EventList extends Component {
                 />
         })
         return(  
-            <div>
-                <table>
+            <div className='eventList'>
+                < table className = 'eventListTable table' >
                     <tbody>        
                         {eventJSX}
                     </tbody>
