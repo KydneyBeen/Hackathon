@@ -17,7 +17,6 @@ class Location extends Component {
             let latlng = pos.coords.latitude + "," + pos.coords.longitude
             axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latlng}&key=AIzaSyBeBWzf10BUjCAqbTY3qbjDdPjHOCTx_eM`)
                 .then((res) => {
-                    console.log(res)
                 let city = res.data.results[0].address_components[3].long_name
                 let province = res.data.results[0].address_components[5].short_name
                 this.setState({

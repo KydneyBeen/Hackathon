@@ -1,5 +1,4 @@
 import React, {Component } from 'react'
-import axios from "axios"
 import Location from "./Location"
 import Input from "./Input"
 
@@ -34,9 +33,5 @@ class Search extends Component {
         )
     }
 }
-
-
-
-
 
 export default Search
