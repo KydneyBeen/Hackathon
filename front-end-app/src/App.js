@@ -38,7 +38,6 @@ class App extends Component {
   componentDidMount() {
     axios.get('http://localhost:8000/')
     .then(response => {
-      console.log("Sydney", response.data)
       const eventsArray = response.data
       this.setState({
         events: eventsArray
@@ -53,12 +52,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+<<<<<<< HEAD
       <div>
         <NavBar />
         <Jumbotron />
         <Search filteredEvents={this.filteredEvents}getCity = {this.getCity}/>
+=======
+        <NavBar filteredEvents={this.filteredEvents} getCity={this.getCity}/>
+        <Jumbotron homeLocation={this.state.homeLocation}/>
+>>>>>>> 00b150d1740a03bed897898a77097e1b280e9c1e
         <Switch>
-          <Route exact path="/events" render={(routeProps)=><EventList
+          <Route exact path="/" render={(routeProps)=><EventList
             {...routeProps}
             events={this.state.events}
             />}

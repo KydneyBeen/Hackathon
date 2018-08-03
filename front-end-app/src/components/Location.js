@@ -37,8 +37,8 @@ class Location extends Component {
     render() {
         
         return (
-            <div className = "form-group">
-                <select onChange={this.makeCity} className = "form-control" >
+            <div className = "form-group ">
+                <select onChange={this.makeCity} className = "form-control locationDropdown" >
                     <option value={this.state.city}> This City ({this.state.city}, {this.state.province})</option>
                     <option value="Abbotsford">Abbotsford</option>
                     <option value="Aldergrove">Aldergrove</option>
