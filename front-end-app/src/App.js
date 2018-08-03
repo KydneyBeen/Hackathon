@@ -17,6 +17,14 @@ class App extends Component {
     this.setState({
       location: location,
       search: searchQuery
+    },() => {
+      console.log(this.state.location, this.state.search)
+      axios.get(`http://localhost:8000/${this.state.location}/${this.state.search}`)
+        .then(response => {
+        this.setState({
+          events: response.data
+        })
+      })
     })
   }
   
@@ -31,13 +39,6 @@ class App extends Component {
       .catch(error => {
           console.log(error)
       })
-  }
-
-  componentDidUpdate() {
-    axios.get(`http://localhost:8000/${this.state.location}`)
-    .then(response => {
-      console.log(response.data)
-    })
   }
   
   render() {
