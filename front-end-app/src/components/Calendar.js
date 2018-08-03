@@ -43,35 +43,11 @@ class Calendar extends Component {
         })
     }
 
-    createOutlookEvent = (title, date, details, location) => {
-        const baseUrl = 'https://bay02.calendar.live.com/calendar/calendar.aspx?rru=addevent'
-        const titleParam = '&summary='
-        const titleVal = 'Some event Title'
-        const dateStartParam = '&dtstart='
-        const dateStartVal = '20180512T230000Z'
-        const dateEndParam = '&dtend='
-        const dateEndVal = '20180513T030000Z'
-        const detailsParam = '&description='
-        const detailsVal = 'some details about the event'
-        const locationParam = '&location='
-        const locationVal = '455 Granville, Vancouver'
-
-        const eventUrl = baseUrl + titleParam + titleVal + dateStartParam + dateStartVal + dateEndParam + dateEndVal + detailsParam + detailsVal + locationParam + locationVal
-
-        this.setState({
-            calendarUrl: eventUrl
-        })
-    }
-
-
-
     render() {
-        console.log('Calendar props', this.props.currEvent)
-
         return (
             < div className = 'buttonContainer' >
-                <button type="button" className="btn btn-outline-primary btnCalendar" onClick={() => this.createGoogleEvent()}><i className='material-icons calendarIcons'>calendar_today</i>Google Calendar</button>
-                <button type="button" className="btn btn-outline-primary btnCalendar" onClick={() => this.createYahooEvent()}><i className='material-icons calendarIcons'>calendar_today</i> Yahoo Calendar</button>
+                <button type="button" className="btn btn-outline-primary btnCalendar" onClick={() => this.createGoogleEvent()}><i className='material-icons calendarIcons'>calendar_today</i><a href= {this.state.calendarUrl}>Google Calendar</a></button>
+                <button type="button" className="btn btn-outline-primary btnCalendar" onClick={() => this.createYahooEvent()}><i className='material-icons calendarIcons'>calendar_today</i><a href= {this.state.calendarUrl}>Yahoo Calendar</a></button>
             </div>
         )
     }

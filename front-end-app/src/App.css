@@ -130,6 +130,15 @@
   border: #FF00A4 1px solid
 }
 
+.btnCalendar a {
+  text-decoration: none;
+  color: #FF00A4;
+}
+
+.btnCalendar a:hover{
+  background-color: transparent;
+}
+
 .eventBtn{
   background-color: #FF00A4 !important;
   color: white !important;
@@ -140,8 +149,6 @@
   text-align: center !important;
   vertical-align: middle;
 }
-
-
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
