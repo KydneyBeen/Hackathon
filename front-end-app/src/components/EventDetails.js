@@ -3,8 +3,11 @@ import Calendar from './Calendar'
 import Map from './Map'
 
 class EventDetails extends Component {
+
     render() {
         console.log('EventDetails log', this.props.currEvent)
+        
+        
        
         return (
             <div className='eventDetails'>
