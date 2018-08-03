@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './App.css';
 import axios from 'axios'
-import {Search, EventList, NavBar, Jumbotron} from  './components'
+import {Route, Switch} from 'react-router-dom'
+import {Search, EventList, EventDetails, NavBar, Jumbotron} from  './components'
 
 
 class App extends Component {
@@ -52,9 +53,20 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <Jumbotron homeLocation= {this.state.homeLocation}/>
-        <Search filteredEvents={this.filteredEvents} getCity={this.getCity}/>
-        <EventList events={this.state.events}/>
+        <Jumbotron />
+        <Search filteredEvents={this.filteredEvents}/>
+        <Switch>
+          <Route exact path="/events" render={(routeProps)=><EventList
+            {...routeProps}
+            events={this.state.events}
+            />}
+          />
+          <Route path='/event/:eventID'render={(routeProps)=><EventDetails
+            {...routeProps}
+            events={this.state.events}
+            />}
+          />
+        </Switch>
       </div>
     )
   }

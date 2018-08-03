@@ -1,6 +1,5 @@
 import React, {Component } from 'react'
 import Event from './Event'
-import EventDetails from './EventDetails'
 
 class EventList extends Component {
     state = {
@@ -11,7 +10,7 @@ class EventList extends Component {
         console.log('funcCurrEvent', this.props.events[id])
         this.setState ({
             currEvent: this.props.events[id]
-        })
+        }, () => this.props.updateCurrentState(this.state.currEvent))
     }
 
     render() {
@@ -33,7 +32,6 @@ class EventList extends Component {
                 <div className = 'eventListTable table' >       
                     {eventJSX}
                 </div>
-                <EventDetails currEvent = {this.state.currEvent}/>
             </div>
         )
     }
