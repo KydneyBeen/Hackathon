@@ -66,12 +66,23 @@ const eventInfoArray = [
 app.get('/:location/:searchQuery', (req, res) => {
     let {location, searchQuery} = req.params
     const today = moment()
-    location === 'Tomorrow' ? location = today.clone().add(1, 'd') : location = today
+    let endDate = ''
+    // if (searchQuery === 'Tomorrow') {
+    //     date = today.clone().add(1, 'd')
+    // }
+    // else if (searchQuery === 'Today') {
+    //     date = today
+    // }
+    // else {
+    //     date = 
+    // }
 
 
-    axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=9RWdFkyifD1SUSNK9qV0MYKWz5226k5G&city=Vancouver&startDateTime=2018-08-03T12:00:00Z`)
+    axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=9RWdFkyifD1SUSNK9qV0MYKWz5226k5G&city=vancouver&startDateTime=2018-08-03T12:00:00Z`)
         .then((response) => {
-            console.log(response.data._embedded.events)
+            // console.log(response.data._embedded.events)
+            // &endDateTime=${date}
+            res.send(response.data._embedded.events)
         })
 })
 
