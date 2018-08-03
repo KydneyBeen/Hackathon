@@ -10,7 +10,8 @@ class App extends Component {
     events: [],
     apiKey: 'AIzaSyD6Y-jvO7HIRAAwTKIWiVcAZJf8ywR1MDs',
     location: '',
-    search: ''
+    search: '',
+    homeLocation: ''
   }
 
   filteredEvents = (searchQuery, location) => {
@@ -24,6 +25,12 @@ class App extends Component {
           events: response.data
         }, () => {console.log("State: ", this.state.events)})
       })
+    })
+  }
+
+  getCity = (val) => {
+    this.setState({
+      homeLocation: val
     })
   }
   
@@ -45,8 +52,8 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <Jumbotron />
-        <Search filteredEvents={this.filteredEvents}/>
+        <Jumbotron homeLocation= {this.state.homeLocation}/>
+        <Search filteredEvents={this.filteredEvents} getCity={this.getCity}/>
         <EventList events={this.state.events}/>
       </div>
     )
