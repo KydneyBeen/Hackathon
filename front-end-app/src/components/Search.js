@@ -57,6 +57,12 @@ class Location extends Component {
         city:"",
         province:"",
     }
+
+    makeCity = (e) => {
+        let selected = e.target.value
+        this.props.getAddress(selected)
+    }
+
     componentDidMount() {
         navigator.geolocation.getCurrentPosition((pos) => {
             let latlng = pos.coords.latitude + "," + pos.coords.longitude

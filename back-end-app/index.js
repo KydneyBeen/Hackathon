@@ -21,7 +21,7 @@ const eventInfoArray = [
             },
         time:
             {
-                 date: 'August 8th',
+                 date: '2018-08-02',
                  time: '6:00 - 8:00 PM'
              }
     },
@@ -38,7 +38,7 @@ const eventInfoArray = [
             },
         time:
             {
-                 date: 'August 13th',
+                 date: '2018-08-03',
                  time: '6:00 - 7:30 PM'
              }
     },
@@ -56,7 +56,7 @@ const eventInfoArray = [
             },
         time:
              {
-                 date: '2018-08-02',
+                 date: '2018-08-07',
                  time: '6:00 - 7:30 PM'
              }
     }
@@ -67,26 +67,32 @@ app.get('/', (req, res) => {
     res.send(eventInfoArray)
 })
 
-app.get('/:location', (req, res) => {
-    const {location, date} = req.params
+app.get('/:location/:searchQuery', (req, res) => {
+    const {location, searchQuery} = req.params
     const today = moment()
-    const filteredDates = []
-    if(date === 'Today') {
-        filteredDates = eventInfoArray.filter(event => 
-            moment(event.time.date).isSame(today, 'day')
-        )
+    let dateFilteredEvents = []
+    if(searchQuery === 'Today') {
+        dateFilteredEvents = eventInfoArray.filter(event => {
+            return moment(event.time.date).isSame(today, 'day')
+        })
     }
-    else if(date === 'Tomorrow') {
-        filteredDates = eventInfoArray.filter(event =>
-            moment(event.time.date).isSame(today.add(1, 'day'), 'day')
-        )
+    else if (searchQuery === 'Tomorrow') {
+        const nextDay = today.clone().add(1, 'd')
+        dateFilteredEvents = eventInfoArray.filter(event => {
+            return moment(event.time.date).isSame(nextDay, 'day')
+        })
     }
-
-    
-    const filteredEvents = eventInfoArray.filter(event => {
+    else {
+        const nextWeek = today.clone().add(7, 'd')
+        const prevDay = today.clone().subtract(1, 'd')
+        dateFilteredEvents = eventInfoArray.filter(event => {
+            return moment(event.time.date).isBetween(prevDay, nextWeek)
+        })
+    }
+    const dateAndLocationFilteredEvents = dateFilteredEvents.filter(event => {
         return event.address.city.toLowerCase() === location.toLowerCase()
     })
-    res.send(filteredEvents)
+    res.send(dateAndLocationFilteredEvents)
 })
 
 app.listen(8000, () => {
