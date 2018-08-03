@@ -1,7 +1,6 @@
 import React, {Component } from 'react'
 import Calendar from './Calendar'
 import Map from './Map'
-import axios from "axios"
 
 class EventDetails extends Component {
     
