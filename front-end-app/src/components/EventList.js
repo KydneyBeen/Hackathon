@@ -18,11 +18,11 @@ class EventList extends Component {
         console.log('EventList log', this.props)
         let eventJSX = this.props.events.map((element, i) =>{
             return <Event 
-                title = {element.title}
-                timeDate = {element.time.date}
-                timeTime = {element.time.time}
+                title = {element.name}
+                timeDate = {element.dates.start.localDate}
+                timeTime = {element.dates.start.localTime}
                 id = {element.id}
-                key = {i}
+                key = {element.id}
                 funcCurrEvent = {this.funcCurrEvent}
                 />
         })
