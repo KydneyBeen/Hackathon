@@ -15,10 +15,10 @@ class NavBar extends Component {
                   <li class="nav-item active">
                     <a class = "nav-link" href = "#" >Concert </a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item active">
                     <a class="nav-link" href="#">Sports</a>
                   </li>
-                  <li class="nav-item dropdown">
+                  < li class = "nav-item dropdown active" >
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Dropdown
                     </a>

@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  height: 100vh;
 }
 
 .App-logo {
@@ -21,6 +20,16 @@
 
 .App-intro {
   font-size: large;
+}
+
+.jumbotron {
+  background-image: url("./img/intro.jpg");
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
 }
 
 .searchSection{
@@ -86,8 +95,15 @@
   margin-right: 50px;
 }
 
-.btn-primary {
+.btnCalendar{
+  color: #FF00A4;
+  border: #FF00A4 1px solid
+}
+
+.eventBtn{
+  background-color: #FF00A4 !important;
   color: white !important;
+  border:0;
 }
 
 .material-icons {
@@ -95,13 +111,7 @@
   vertical-align: middle;
 }
 
-.jumbotron {
-  background-image: url("./img/concert-crowd.jpg");
-  margin: 0;
-  width: 100%;
-  height: auto;
 
-}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
