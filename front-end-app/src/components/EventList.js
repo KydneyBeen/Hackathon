@@ -8,14 +8,14 @@ class EventList extends Component {
     }
 
     funcCurrEvent = (id) => {
-        console.log('funcCurrEvent', this.props.events[id])
+        // console.log('funcCurrEvent', this.props.events[id])
         this.setState ({
             currEvent: this.props.events[id]
         })
     }
 
     render() {
-        console.log('EventList log', this.props)
+        // console.log('EventList log', this.props)
         let eventJSX = this.props.events.map((element, i) =>{
             return <Event 
                 title = {element.title}

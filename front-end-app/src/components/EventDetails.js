@@ -4,7 +4,7 @@ import Map from './Map'
 
 class EventDetails extends Component {
     render() {
-        console.log('EventDetails log', this.props.currEvent)
+        // console.log('EventDetails log', this.props.currEvent)
        
         return (
             <div>
@@ -27,3 +27,5 @@ class EventDetails extends Component {
 }
 
 export default EventDetails
+
+
