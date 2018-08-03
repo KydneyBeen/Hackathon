@@ -8,9 +8,10 @@ class NavBar extends Component {
                 <div className="container">
                     <h1 className="display-4">STY EVENTS</h1>
                     <p className="lead">Book your next night out with STY</p>
-                    
-                    <a className='material-icons jumbotronIcon'> location_on  {this.props.homeLocation}</a>
-
+                    <button className="jumbotronContainer">
+                        <i className = "material-icons jumbotronIcon" >location_on </i>
+                        <a className= "jumbotronLocation">  {this.props.homeLocation}</a>
+                    </button>
                 </div>
             </div>
         )

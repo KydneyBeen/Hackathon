@@ -37,8 +37,29 @@
   color: white;
 }
 
+.jumbotronContainer{
+    background-color: #FF00A4 !important;
+    vertical-align: middle;
+    color: white;
+    margin:0;
+    border: 0;
+    padding: 5px;
+    min-width: 200px;
+    border-radius: 2%;
+}
+
 .jumbotronIcon{
-  font-size: 32
+  position: relative;
+   vertical-align: center;
+  font-size: 24px;
+}
+
+
+.jumbotronLocation{
+  position: relative;
+  margin: 0;
+  vertical-align: center;
+  font-size: 18px;
 }
 
 .searchSection{
