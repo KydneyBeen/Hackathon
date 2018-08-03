@@ -67,21 +67,19 @@ app.get('/:location/:searchQuery', (req, res) => {
     let {location, searchQuery} = req.params
     const today = moment()
     let endDate = ''
-    // if (searchQuery === 'Tomorrow') {
-    //     date = today.clone().add(1, 'd')
-    // }
+    if (searchQuery === 'Tomorrow') {
+        endDate = today.clone().add(1, 'd')
+        console.log(endDate.format())
+    }
     // else if (searchQuery === 'Today') {
-    //     date = today
+    //     endDate = today
     // }
     // else {
-    //     date = 
+    //     endDate = 
     // }
 
-
-    axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=9RWdFkyifD1SUSNK9qV0MYKWz5226k5G&city=vancouver&startDateTime=2018-08-03T12:00:00Z`)
+    axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=9RWdFkyifD1SUSNK9qV0MYKWz5226k5G&city=${location}&startDateTime=${today.toISOString()}&endDateTime=${endDate.toISOString()}`)
         .then((response) => {
-            // console.log(response.data._embedded.events)
-            // &endDateTime=${date}
             res.send(response.data._embedded.events)
         })
 })
@@ -90,7 +88,10 @@ app.get('/:location/:searchQuery', (req, res) => {
 
 
 app.get('/', (req, res) => {
-    res.send(eventInfoArray)
+    axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=9RWdFkyifD1SUSNK9qV0MYKWz5226k5G&c`)
+    .then((response) => {
+        res.send(response.data._embedded.events)
+    })
 })
 
 app.get('/:location/:searchQuery', (req, res) => {
