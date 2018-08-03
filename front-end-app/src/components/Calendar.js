@@ -66,7 +66,7 @@ class Calendar extends Component {
 
 
     render() {
-        console.log('Calendar props', this.props)
+        console.log('Calendar props', this.props.currEvent)
 
         return (
             < div className = 'buttonContainer' >
