@@ -7,7 +7,7 @@ class EventDetails extends Component {
         currEvent:null
     }
 
-    componentDidUpdate() {
+    componentDidMount() {
         console.log(this.props.events)
         let currEvent = this.props.events.find((event) => {
 
