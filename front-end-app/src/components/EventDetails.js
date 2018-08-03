@@ -11,7 +11,11 @@ class EventDetails extends Component {
        
         return (
             <div className='eventDetails'>
+<<<<<<< Updated upstream
                 <h1 >Event Details</h1>
+=======
+                <h1>Event Details</h1>
+>>>>>>> Stashed changes
                 {!this.props.currEvent ? <p> 'loading .... ' </p> : 
                 <div>
                     <div className='eventDetailsItems'>

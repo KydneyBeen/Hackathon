@@ -24,10 +24,14 @@
 }
 
 .searchSection{
+<<<<<<< Updated upstream
   background-color: #161324;
   padding-top: 15px;
   margin: 0;
   width: 100vw;
+=======
+  width: 50vw;
+>>>>>>> Stashed changes
 }
 
 .searchSectionIcon{
@@ -83,7 +87,14 @@
 .btn {
   text-align: center !important;
   vertical-align: middle;
+<<<<<<< Updated upstream
   margin-right: 50px;
+=======
+  margin-left: 5px;
+  margin-right: 50px;
+
+}
+>>>>>>> Stashed changes
 
 }
 

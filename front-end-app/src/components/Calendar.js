@@ -70,8 +70,13 @@ class Calendar extends Component {
 
         return (
             < div className = 'buttonContainer' >
+<<<<<<< Updated upstream
                 <button type="button" className="btn btn-outline-primary" onClick={() => this.createGoogleEvent()}><i className='material-icons'>calendar_today</i><a href= {this.state.calendarUrl}>Google Calendar</a></button>
                 <button type="button" className="btn btn-outline-primary" onClick={() => this.createYahooEvent()}><i className='material-icons'>calendar_today</i><a href={this.state.calendarUrl}> Yahoo Calendar</a></button>
+=======
+                <button type="button" className="btn btn-outline-primary" onClick={() => this.createGoogleEvent()}><i className='material-icons'>calendar_today</i>Google Calendar</button>
+                <button type="button" className="btn btn-outline-primary" onClick={() => this.createYahooEvent()}><i className='material-icons'>calendar_today</i> Yahoo Calendar</button>
+>>>>>>> Stashed changes
             </div>
         )
     }

@@ -2,6 +2,7 @@ const express = require ('express')
 const app = express()
 const cors = require('cors')
 const moment = require('moment')
+const axios = require ('axios')
 
 moment().format()
 
@@ -62,6 +63,20 @@ const eventInfoArray = [
     }
 ]
 
+app.get('/:location/:searchQuery', (req, res) => {
+    let {location, searchQuery} = req.params
+    const today = moment()
+    location === 'Tomorrow' ? location = today.clone().add(1, 'd') : location = today
+
+
+    axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=9RWdFkyifD1SUSNK9qV0MYKWz5226k5G&city=Vancouver&startDateTime=2018-08-03T12:00:00Z`)
+        .then((response) => {
+            console.log(response.data._embedded.events)
+        })
+})
+
+
+
 
 app.get('/', (req, res) => {
     res.send(eventInfoArray)
@@ -71,30 +86,31 @@ app.get('/:location/:searchQuery', (req, res) => {
     const {location, searchQuery} = req.params
     const today = moment()
     let dateFilteredEvents = []
-    if(searchQuery === 'Today') {
-        dateFilteredEvents = eventInfoArray.filter(event => {
-            return moment(event.time.date).isSame(today, 'day')
-        })
-    }
-    else if (searchQuery === 'Tomorrow') {
-        const nextDay = today.clone().add(1, 'd')
-        dateFilteredEvents = eventInfoArray.filter(event => {
-            return moment(event.time.date).isSame(nextDay, 'day')
-        })
-    }
-    else {
-        const nextWeek = today.clone().add(7, 'd')
-        const prevDay = today.clone().subtract(1, 'd')
-        dateFilteredEvents = eventInfoArray.filter(event => {
-            return moment(event.time.date).isBetween(prevDay, nextWeek)
-        })
-    }
-    const dateAndLocationFilteredEvents = dateFilteredEvents.filter(event => {
-        return event.address.city.toLowerCase() === location.toLowerCase()
-    })
-    res.send(dateAndLocationFilteredEvents)
+
 })
 
 app.listen(8000, () => {
     console.log(`Server Started on http://localhost:8000`)
 })
+
+
+    // if (searchQuery === 'Today') {
+    //     dateFilteredEvents = eventInfoArray.filter(event => {
+    //         return moment(event.time.date).isSame(today, 'day')
+    //     })
+    // } else if (searchQuery === 'Tomorrow') {
+    //     const nextDay = today.clone().add(1, 'd')
+    //     dateFilteredEvents = eventInfoArray.filter(event => {
+    //         return moment(event.time.date).isSame(nextDay, 'day')
+    //     })
+    // } else {
+    //     const nextWeek = today.clone().add(7, 'd')
+    //     const prevDay = today.clone().subtract(1, 'd')
+    //     dateFilteredEvents = eventInfoArray.filter(event => {
+    //         return moment(event.time.date).isBetween(prevDay, nextWeek)
+    //     })
+    // }
+    // const dateAndLocationFilteredEvents = dateFilteredEvents.filter(event => {
+    //     return event.address.city.toLowerCase() === location.toLowerCase()
+    // })
+    // res.send(dateAndLocationFilteredEvents)
