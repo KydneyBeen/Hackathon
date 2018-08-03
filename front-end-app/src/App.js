@@ -49,9 +49,11 @@ class App extends Component {
       })
   }
   
+  
   render() {
     return (
       <div className="App">
+      <div>
         <NavBar />
         <Jumbotron />
         <Search filteredEvents={this.filteredEvents}getCity = {this.getCity}/>
@@ -67,6 +69,7 @@ class App extends Component {
             />}
           />
         </Switch>
+        </div>
       </div>
     )
   }
