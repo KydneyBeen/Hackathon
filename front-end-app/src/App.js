@@ -54,7 +54,7 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <Jumbotron />
-        <Search filteredEvents={this.filteredEvents}/>
+        <Search filteredEvents={this.filteredEvents}getCity = {this.getCity}/>
         <Switch>
           <Route exact path="/events" render={(routeProps)=><EventList
             {...routeProps}
