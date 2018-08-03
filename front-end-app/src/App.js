@@ -63,7 +63,8 @@ class App extends Component {
           />
           <Route path='/event/:eventID'render={(routeProps)=><EventDetails
             {...routeProps}
-            events={this.state.events}
+            location = {this.state.location}
+            search={this.state.search}
             />}
           />
         </Switch>
