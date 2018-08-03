@@ -13,18 +13,26 @@ class Location extends Component {
     }
 
     componentDidMount() {
+        let city = ""
+        let province = ""
         navigator.geolocation.getCurrentPosition((pos) => {
             let latlng = pos.coords.latitude + "," + pos.coords.longitude
             axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latlng}&key=AIzaSyBeBWzf10BUjCAqbTY3qbjDdPjHOCTx_eM`)
                 .then((res) => {
-                let city = res.data.results[0].address_components[3].long_name
-                let province = res.data.results[0].address_components[5].short_name
-                this.setState({
-                    city,
-                    province,
+                    city = res.data.results[0].address_components[3].long_name
+                    province = res.data.results[0].address_components[5].short_name
+                    this.setState({
+                        city,
+                        province,
+                    })
                 })
-            })
+                .then((res) => {
+                    let welcomeCity = city + ", " + province
+                    this.props.getCity(welcomeCity)
+                })
+                
         })
+        
     }
     render() {
         
