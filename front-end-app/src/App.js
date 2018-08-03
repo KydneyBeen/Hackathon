@@ -66,6 +66,7 @@ class App extends Component {
             {...routeProps}
             location = {this.state.location}
             search={this.state.search}
+            events={this.state.events}
             />}
           />
         </Switch>

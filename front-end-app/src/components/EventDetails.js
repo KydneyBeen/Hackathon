@@ -4,32 +4,17 @@ import Map from './Map'
 import axios from "axios"
 
 class EventDetails extends Component {
-    state = {
-        currEvent:null,
-        events:null
-    }
-
-    componentDidMount() {
-        axios.get(`http://localhost:8000/${this.props.location}/${this.props.search}`)
-        .then ((res) => {
-            this.setState({events:res.data})
-        })
-        .then(() => {
-            let currEvents = this.state.currEvent.find((event) => {
-                return event.id === this.props.match.params
-            })
-            this.setState({currEvents})
-        })
-
-    }
     
     render() {
-        const {currEvent} = this.state
+    const {events, match} = this.props
+    const currEvent = events.find(event => {
+           return event.id === match.params.eventID
+       })
 
         return (
             <div className='eventDetails'>
                 <h1>Event Details</h1>
-                 {this.props.events.length < 1 ? <p>Loading...</p> :
+                 {!currEvent ? <p>Loading...</p> :
                 <div>
                     <div className='eventDetailsItems'>
                         <h2>{currEvent.title}</h2>
