@@ -52,15 +52,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-<<<<<<< HEAD
-      <div>
-        <NavBar />
-        <Jumbotron />
-        <Search filteredEvents={this.filteredEvents}getCity = {this.getCity}/>
-=======
         <NavBar filteredEvents={this.filteredEvents} getCity={this.getCity}/>
         <Jumbotron homeLocation={this.state.homeLocation}/>
->>>>>>> 00b150d1740a03bed897898a77097e1b280e9c1e
         <Switch>
           <Route exact path="/" render={(routeProps)=><EventList
             {...routeProps}
@@ -69,12 +62,12 @@ class App extends Component {
           />
           <Route path='/event/:eventID'render={(routeProps)=><EventDetails
             {...routeProps}
-            events={this.state.events}
+            location = {this.state.location}
+            search={this.state.search}
             />}
           />
         </Switch>
         </div>
-      </div>
     )
   }
 }
