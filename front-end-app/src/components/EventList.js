@@ -7,14 +7,12 @@ class EventList extends Component {
     }
 
     funcCurrEvent = (id) => {
-        console.log('funcCurrEvent', this.props.events[id])
         this.setState ({
             currEvent: this.props.events[id]
         }, () => this.props.updateCurrentState(this.state.currEvent))
     }
 
     render() {
-        console.log('EventList log', this.props)
         let eventJSX = this.props.events.map((element, i) =>{
             return <Event 
                 title = {element.name}
@@ -26,11 +24,12 @@ class EventList extends Component {
                 funcCurrEvent = {this.funcCurrEvent}
                 />
         })
-        console.log('eventJSX', eventJSX)
         return(  
-            <div className='eventList'>
-                <div className = 'eventListTable table' >       
-                    {eventJSX}
+            <div className="container">
+                <div className = "row justify-content-center">
+                    <div className="card-deck">       
+                            {eventJSX}
+                    </div>
                 </div>
             </div>
         )
