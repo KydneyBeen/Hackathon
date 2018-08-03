@@ -36,9 +36,7 @@ class App extends Component {
   componentDidUpdate() {
     axios.get(`http://localhost:8000/${this.state.location}`)
     .then(response => {
-      this.setState({
-        events: response.data
-      })
+      console.log(response.data)
     })
   }
   

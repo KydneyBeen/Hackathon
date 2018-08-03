@@ -1,6 +1,9 @@
 const express = require ('express')
 const app = express()
 const cors = require('cors')
+const moment = require('moment')
+
+moment().format()
 
 app.use(cors())
 
@@ -16,7 +19,11 @@ const eventInfoArray = [
                 stNameAndNumber: '455 Granville Street',
                 city: 'Richmond'
             },
-        time: `Wednesday August 8th, 2018, 6:00 - 8:00 PM`
+        time:
+            {
+                 date: 'August 8th',
+                 time: '6:00 - 8:00 PM'
+             }
     },
     {
         id: 1,
@@ -29,7 +36,11 @@ const eventInfoArray = [
                 stNameAndNumber: '455 Granville Street',
                 city: 'Vancouver'
             },
-        time: `Monday August 13th, 2018, 6:00 - 7:30 PM`
+        time:
+            {
+                 date: 'August 13th',
+                 time: '6:00 - 7:30 PM'
+             }
     },
     {
         id: 2,
@@ -43,7 +54,11 @@ const eventInfoArray = [
                 stNameAndNumber: '455 Granville Street',
                 city: 'Vancouver'
             },
-        time: `Tuesday August 14th, 2018, 6:00 - 7:30 PM`
+        time:
+             {
+                 date: '2018-08-02',
+                 time: '6:00 - 7:30 PM'
+             }
     }
 ]
 
@@ -53,10 +68,24 @@ app.get('/', (req, res) => {
 })
 
 app.get('/:location', (req, res) => {
-    const {location, searchQuery} = req.params
-    const filteredEvents = eventInfoArray.filter(event => 
-        event.address.city.toLowerCase() === location.toLowerCase()
-    )
+    const {location, date} = req.params
+    const today = moment()
+    const filteredDates = []
+    if(date === 'Today') {
+        filteredDates = eventInfoArray.filter(event => 
+            moment(event.time.date).isSame(today, 'day')
+        )
+    }
+    else if(date === 'Tomorrow') {
+        filteredDates = eventInfoArray.filter(event =>
+            moment(event.time.date).isSame(today.add(1, 'day'), 'day')
+        )
+    }
+
+    
+    const filteredEvents = eventInfoArray.filter(event => {
+        return event.address.city.toLowerCase() === location.toLowerCase()
+    })
     res.send(filteredEvents)
 })
 
