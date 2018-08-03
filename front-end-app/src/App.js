@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
 import axios from 'axios'
-import {Search, EventList} from  './components'
+import {Search, EventList, NavBar, Jumbotron} from  './components'
 
 
 class App extends Component {
@@ -44,6 +44,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <NavBar />
+        <Jumbotron />
         <Search filteredEvents={this.filteredEvents}/>
         <EventList events={this.state.events}/>
       </div>
