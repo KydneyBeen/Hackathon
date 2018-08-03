@@ -31,7 +31,7 @@ class EventList extends Component {
         return(  
             <div className='eventList'>
                 <div className = 'eventListTable table' >       
-                        {eventJSX}
+                    {eventJSX}
                 </div>
                 <EventDetails currEvent = {this.state.currEvent}/>
             </div>

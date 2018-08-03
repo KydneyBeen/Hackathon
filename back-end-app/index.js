@@ -65,22 +65,36 @@ const eventInfoArray = [
 
 app.get('/:location/:searchQuery', (req, res) => {
     let {location, searchQuery} = req.params
-    const today = moment()
-    let endDate = ''
-    if (searchQuery === 'Tomorrow') {
-        endDate = today.clone().add(1, 'd')
-        console.log(endDate.format())
+    const today = moment().startOf('day')
+    let startDateIso = ''
+    let endDateIso = ''
+    function getISOStringWithoutSecsAndMillisecs1(date) {
+        const dateAndTime = date.toISOString().split('T')
+        const time = dateAndTime[1].split(':')
+        return dateAndTime[0]+'T'+time[0]+':'+time[1]
     }
-    // else if (searchQuery === 'Today') {
-    //     endDate = today
-    // }
-    // else {
-    //     endDate = 
-    // }
+    if (searchQuery === 'Tomorrow') {
+        const endDate = today.clone().add(1, 'd')
+        startDateIso = getISOStringWithoutSecsAndMillisecs1(endDate) + ':00Z'
+        endDateIso = getISOStringWithoutSecsAndMillisecs1(endDate.endOf("day")) + ':00Z'
+        console.log(startDateIso)
+        console.log(endDateIso)
+    }
+    else if (searchQuery === 'Today') {
+        const endDate = today
+        startDateIso = getISOStringWithoutSecsAndMillisecs1(today) + ':00Z'
+        endDateIso = getISOStringWithoutSecsAndMillisecs1(endDate.endOf("day")) + ':00Z'
+    }
+    else {
+        const endDate = today.clone().add(7, 'd')
+        startDateIso = getISOStringWithoutSecsAndMillisecs1(today) + ':00Z'
+        endDateIso = getISOStringWithoutSecsAndMillisecs1(endDate.endOf("day")) + ':00Z'
+    }
 
-    axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=9RWdFkyifD1SUSNK9qV0MYKWz5226k5G&city=${location}&startDateTime=${today.toISOString()}&endDateTime=${endDate.toISOString()}`)
+    axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=9RWdFkyifD1SUSNK9qV0MYKWz5226k5G&city=${location}&startDateTime=${startDateIso}&endDateTime=${endDateIso}`)
         .then((response) => {
             res.send(response.data._embedded.events)
+            // console.log(response.data._embedded.events)
         })
 })
 
