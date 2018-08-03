@@ -3,6 +3,7 @@ import React, {Component } from 'react'
 class NavBar extends Component {
 
     render() { 
+        console.log('location', this.props)
         return (
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
