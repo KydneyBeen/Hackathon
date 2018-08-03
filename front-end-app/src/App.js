@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
 import axios from 'axios'
-import {Search, EventList, Map, EventDetails, Calendar} from  './components'
+import {Search, EventList} from  './components'
 
 
 class App extends Component {
@@ -26,29 +26,29 @@ class App extends Component {
       const eventsArray = response.data
       this.setState({
         events: eventsArray
-        }, () => {console.log(this.state)})
+        })
       })
       .catch(error => {
           console.log(error)
       })
   }
 
-  // componentDidUpdate() {
-  //   param could be nearby, today, or tomorrow
-  //   if(this.state.search === 'Today' || 'Tomorrow')
-  //   axios.get(`http://localhost:8000/:`)
-  // }
+  componentDidUpdate() {
+    axios.get(`http://localhost:8000/${this.state.location}`)
+    .then(response => {
+      this.setState({
+        events: response.data
+      })
+    })
+  }
   
   render() {
     return (
       <div className="App">
         <Search filteredEvents={this.filteredEvents}/>
         <EventList events={this.state.events}/>
-        <EventDetails/>
-        <Calendar />
-        <Map />
       </div>
-    );
+    )
   }
 }
 
