@@ -21,7 +21,7 @@ const eventInfoArray = [
             },
         time:
             {
-                 date: '2018-08-02',
+                 date: '2018-08-03',
                  time: '6:00 - 8:00 PM'
              }
     },
@@ -38,7 +38,7 @@ const eventInfoArray = [
             },
         time:
             {
-                 date: '2018-08-03',
+                 date: '2018-08-04',
                  time: '6:00 - 7:30 PM'
              }
     },
