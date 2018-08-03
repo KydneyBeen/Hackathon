@@ -52,22 +52,30 @@
   vertical-align: top;
   width: 50%;
   text-align: left;
-  border: 1px solid
+  border: 1px solid;
+}
+
+.eventDetails > h1 {
+  margin-bottom: 13px;
+  text-align: center;
 }
 
 .eventDetailsItems{
   height: 40vh;
+  overflow: hidden;
 }
 
 .map-iframe {
   display: block;
   width: 100%;
-  height: 406px;
+  height: 385px;
   margin-top: 15px;
 }
 
 .buttonContainer{
-  float: right;
+  display: block;
+  width: 100%;
+  margin-top: 10px;
   margin-bottom: 10px;
   
 }
