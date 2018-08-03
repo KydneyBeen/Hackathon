@@ -25,6 +25,9 @@
 
 .searchSection{
   width: 50vw;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .searchSectionIcon{
@@ -81,7 +84,10 @@
   text-align: center !important;
   vertical-align: middle;
   margin-right: 50px;
+}
 
+.btn-primary {
+  color: white !important;
 }
 
 .material-icons {

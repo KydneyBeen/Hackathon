@@ -29,11 +29,9 @@ class EventList extends Component {
         console.log('eventJSX', eventJSX)
         return(  
             <div className='eventList'>
-                <table className = 'eventListTable table' >
-                    <tbody>        
+                <div className = 'eventListTable table' >       
                         {eventJSX}
-                    </tbody>
-                </table>
+                </div>
                 <EventDetails currEvent = {this.state.currEvent}/>
             </div>
         )
