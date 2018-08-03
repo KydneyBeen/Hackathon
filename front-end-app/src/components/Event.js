@@ -5,6 +5,7 @@ class Event extends Component {
     render() {
         console.log('Event log', this.props)
         return (
+            <div className="col-lg-4 col-md-6 col-sm-12">
             <div className="card">
                 <img className="card-img-top" src={this.props.image} alt="Card image cap"/>
                 <div className="card-body">
@@ -12,6 +13,7 @@ class Event extends Component {
                     <p className="card-text">{this.props.timeDate}-{this.props.timeTime} </p>
                     <Link to={'/event/' + this.props.id }><a className='btn btn-primary eventBtn' onClick={() => {this.props.funcCurrEvent(this.props.id)}}>Purchase Tickets</a></Link>
                 </div>
+            </div>
             </div>
         )
     }
