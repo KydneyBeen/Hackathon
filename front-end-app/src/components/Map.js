@@ -1,13 +1,18 @@
 import React, {Component } from 'react'
 
 class Map extends Component {
-    state= {
-        address: "455 Granville St"
-    }
 
-    render() {        
+    render() { 
+        console.log('map log', this.props.currEvent.address)
         return (
-            <iframe className= 'map-iframe' src={`https://www.google.com/maps/embed/v1/search?q=${this.state.address}&key=AIzaSyD6Y-jvO7HIRAAwTKIWiVcAZJf8ywR1MDs`} allowFullScreen title="Google Map"></iframe> 
+            <div>
+            {/* {!this.props.currEventAddr.address.stNameAndNumber ? <p> 'loading .... ' </p> : 
+                <div>
+                    <iframe className= 'map-iframe' src={`https://www.google.com/maps/embed/v1/search?q=${this.props.currEventAddr}&key=AIzaSyD6Y-jvO7HIRAAwTKIWiVcAZJf8ywR1MDs`} allowFullScreen title="Google Map"></iframe> 
+                </div>
+            } */}
+            </div>
+            
         )
     }
 }

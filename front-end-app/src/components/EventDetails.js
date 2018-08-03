@@ -14,8 +14,8 @@ class EventDetails extends Component {
                     <div className='eventDetailsItems'>
                         <h2>{this.props.currEvent.title}</h2>
                         <p>{this.props.currEvent.description}</p>
-                        {/* <p>Address: {this.props.currEvent.address.stNameAndNumber} {this.props.currEvent.address.city}</p>
-                        <p>Time: {this.props.currEvent.time.date}, {this.props.currEvent.time.time}</p>  */}
+                        {/* <p>Address: {this.props.currEvent.address.stNameAndNumber}</p> */}
+                        {/* <p>Date: {this.props.currEvent.time.date}</p>} */}
                     </div>
                     <Calendar currEvent={this.props.currEvent}/>
                     <Map currEvent={this.props.currEvent}/>
