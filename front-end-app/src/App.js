@@ -51,11 +51,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar />
+        <NavBar filteredEvents={this.filteredEvents} getCity={this.getCity}/>
         <Jumbotron homeLocation={this.state.homeLocation}/>
-        <Search filteredEvents={this.filteredEvents} getCity={this.getCity}/>
         <Switch>
-          <Route exact path="/events" render={(routeProps)=><EventList
+          <Route exact path="/" render={(routeProps)=><EventList
             {...routeProps}
             events={this.state.events}
             />}
