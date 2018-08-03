@@ -2,11 +2,12 @@ import React, {Component } from 'react'
 
 class Event extends Component {
     render() {
-        // console.log('Event log', this.props)
+        console.log('Event log', this.props)
         return (
             <tr>
-                <td>Title: {this.props.title}</td>
-                <td>Description: {this.props.description} </td>
+                <td>{this.props.title}</td>
+                <td>{this.props.timeDate} </td>
+                <td>{this.props.timeTime} </td>
                 <td><i className='material-icons' onClick={() => {this.props.funcCurrEvent(this.props.id)}}>arrow_forward_ios</i></td>
             </tr>
         )

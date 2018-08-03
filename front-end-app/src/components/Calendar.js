@@ -63,13 +63,15 @@ class Calendar extends Component {
         })
     }
 
+
+
     render() {
-        console.log('Calendar props', this.props)
+        console.log('Calendar props', this.props.currEvent)
 
         return (
             < div className = 'buttonContainer' >
-                <button type="button" className="btn btn-outline-primary" onClick={() => this.createGoogleEvent()}><i className='material-icons'>calendar_today</i>Google Calendar</button>
-                <button type="button" className="btn btn-primary" onClick={() => this.createYahooEvent()}><i className='material-icons'>calendar_today</i> Yahoo Calendar</button>
+                <button type="button" className="btn btn-outline-primary" onClick={() => this.createGoogleEvent()}><i className='material-icons'>calendar_today</i><a href= {this.state.calendarUrl}>Google Calendar</a></button>
+                <button type="button" className="btn btn-outline-primary" onClick={() => this.createYahooEvent()}><i className='material-icons'>calendar_today</i><a href={this.state.calendarUrl}> Yahoo Calendar</a></button>
             </div>
         )
     }

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100vh;
 }
 
 .App-logo {
@@ -23,21 +24,26 @@
 }
 
 .searchSection{
+  background-color: #161324;
+  padding-top: 15px;
+  margin: 0;
   width: 100vw;
+}
+
+.searchSectionIcon{
+  margin-top: 9px;
+  color: white;
 }
 
 .eventList {
   display: inline-block;
-  height: 95vh;
   width: 100vw;
-  border: 1px solid
 }
 
 .eventListTable {
   display: inline-block;
   width: 50%;
   text-align: left;
-  border: 1px solid
 }
 
 .eventDetails {
@@ -45,37 +51,45 @@
   vertical-align: top;
   width: 50%;
   text-align: left;
-  border: 1px solid
+  border: 1px solid;
+}
+
+.eventDetails > h1 {
+  margin-bottom: 13px;
+  text-align: center;
 }
 
 .eventDetailsItems{
-  height: 48vh;
+  height: 40vh;
+  padding: 20px;
+  overflow: hidden;
 }
 
 .map-iframe {
   display: block;
   width: 100%;
-  height: 403px;
+  height: 385px;
   margin-top: 15px;
 }
 
 .buttonContainer{
-  float: right;
+  display: block;
+  width: 100%;
+  margin-top: 10px;
   margin-bottom: 10px;
-  
+  text-align: right;
 }
 
 .btn {
   text-align: center !important;
   vertical-align: middle;
-  margin-left: 15px;
-}
+  margin-right: 50px;
 
+}
 
 .material-icons {
   text-align: center !important;
-    vertical-align: middle;
-    margin-right: 10px;
+  vertical-align: middle;
 }
 
 @keyframes App-logo-spin {
