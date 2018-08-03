@@ -18,12 +18,12 @@ class Search extends Component {
     }
     render() {
         return (
-            <div className ="row">
+            <div className ="row searchSection">
                 <div className ="col">
                     <Input getQuery={this.getQuery}/>
                 </div>
                 <div>
-                    <a href="#" className="material-icons" onClick={this.sendSearch}>search</a>
+                    <a className="material-icons" onClick={this.sendSearch}>search</a>
                 </div>
                 <div className ="col">
                     <Location getAddress={this.getAddress}/>

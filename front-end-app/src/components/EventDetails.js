@@ -10,7 +10,7 @@ class EventDetails extends Component {
             <div className='eventDetails'>
                 {!this.props.currEvent ? <p> 'loading .... ' </p> : 
                 <div>
-                    <div>
+                    <div className='eventDetailsItems'>
                         <p>Title: {this.props.currEvent.title}</p>
                         <p>Description: {this.props.currEvent.description}</p>
                         <p>Address: {this.props.currEvent.address}</p>

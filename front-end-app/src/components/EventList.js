@@ -28,7 +28,7 @@ class EventList extends Component {
         })
         return(  
             <div className='eventList'>
-                < table className = 'eventListTable table' >
+                <table className = 'eventListTable table' >
                     <tbody>        
                         {eventJSX}
                     </tbody>
