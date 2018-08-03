@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css';
 import axios from 'axios'
 import {Route, Switch} from 'react-router-dom'
-import {Search, EventList, EventDetails, NavBar, Jumbotron} from  './components'
+import {Services, EventList, EventDetails, NavBar, Jumbotron} from  './components'
 
 
 class App extends Component {
@@ -24,7 +24,7 @@ class App extends Component {
         .then(response => {
         this.setState({
           events: response.data
-        }, () => {console.log("State: ", this.state.events)})
+        })
       })
     })
   }
@@ -53,6 +53,7 @@ class App extends Component {
       <div className="App">
         <NavBar filteredEvents={this.filteredEvents} getCity={this.getCity}/>
         <Jumbotron homeLocation={this.state.homeLocation}/>
+        <Services />
         <Switch>
           <Route exact path="/" render={(routeProps)=><EventList
             {...routeProps}

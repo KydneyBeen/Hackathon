@@ -62,6 +62,31 @@
   font-size: 18px;
 }
 
+.services {
+  background-color: #151515;
+  margin-bottom: 10px;
+  height: 250px;
+  padding-top: 20px;
+}
+
+.servicesIcon{
+  color : #FF00A4;
+  font-size: 60px;
+
+}
+
+.serviceBox{
+
+}
+
+.services h3{
+    color: white;
+}
+
+.services p {
+  color: #878787;
+}
+
 .searchSection{
   position: fixed;
   top: 5px;
