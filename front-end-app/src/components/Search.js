@@ -23,7 +23,7 @@ class Search extends Component {
                     <Input getQuery={this.getQuery}/>
                 </div>
                 <div>
-                    <a className="material-icons" onClick={this.sendSearch}>search</a>
+                    <i className="material-icons searchSectionIcon" onClick={this.sendSearch}>search</i>
                 </div>
                 <div className ="col">
                     <Location getAddress={this.getAddress}/>
